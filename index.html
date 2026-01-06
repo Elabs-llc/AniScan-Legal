@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AniScan - AI-powered eye condition screening for underserved communities">
+    <title>AniScan - AI-Powered Eye Condition Screening</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(rgba(32, 178, 170, 0.45), rgba(32, 178, 170, 0.45)), url('header-banner.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 150px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(32, 178, 170, 0.2) 100%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            position: relative;
+            z-index: 1;
+            animation: slideDown 1s ease-out;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            position: relative;
+            z-index: 1;
+            animation: slideUp 1s ease-out;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-buttons {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .cta-primary {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #20B2AA 0%, #48D1CC 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(32, 178, 170, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-primary:hover::before {
+            left: 100%;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(32, 178, 170, 0.6);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            padding: 18px 40px;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 3px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: #20B2AA;
+            transform: translateY(-3px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: #20B2AA;
+            margin-bottom: 15px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #20B2AA, #48D1CC);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: #4b5563;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+
+        /* Badges Section */
+        .badges-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            margin-bottom: 80px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .badges-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .badge-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
+        }
+
+        .badge.badge-primary {
+            background: linear-gradient(135deg, #20B2AA, #1a9999);
+            box-shadow: 0 4px 15px rgba(32, 178, 170, 0.3);
+        }
+
+        .badge.badge-primary:hover {
+            box-shadow: 0 8px 25px rgba(32, 178, 170, 0.5);
+        }
+
+        .badge.badge-secondary {
+            background: linear-gradient(135deg, #48D1CC, #40C4C0);
+            box-shadow: 0 4px 15px rgba(72, 209, 204, 0.3);
+        }
+
+        .badge.badge-secondary:hover {
+            box-shadow: 0 8px 25px rgba(72, 209, 204, 0.5);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .feature-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .feature-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .feature-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .feature-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .feature-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .feature-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #20B2AA, #48D1CC);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(32, 178, 170, 0.2);
+        }
+
+        .feature-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(3deg);
+            box-shadow: 0 12px 35px rgba(32, 178, 170, 0.3);
+        }
+
+        .feature-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: #20B2AA;
+            margin: 20px 0 15px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: #4b5563;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            margin: 80px 0;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .step:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .step:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .step:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .step:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .step:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #20B2AA, #48D1CC);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 20px rgba(32, 178, 170, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .step:hover .step-number {
+            transform: scale(1.15) rotate(360deg);
+            box-shadow: 0 12px 30px rgba(32, 178, 170, 0.5);
+        }
+
+        .step h3 {
+            color: #1a9999;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .step p {
+            color: #4b5563;
+            font-size: 0.95rem;
+        }
+
+        /* Disclaimer Section */
+        .disclaimer {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border-left: 6px solid #dc2626;
+            margin: 60px 0;
+            box-shadow: 0 10px 40px rgba(220, 38, 38, 0.15);
+        }
+
+        .disclaimer h2 {
+            color: #dc2626;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .disclaimer .warning-text {
+            color: #dc2626;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+        }
+
+        .disclaimer ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 20px 0;
+        }
+
+        .disclaimer ul li {
+            color: #991b1b;
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .disclaimer ul li::before {
+            content: '⚠️';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Technology Section */
+        .tech-section {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            padding: 60px 40px;
+            border-radius: 20px;
+            color: white;
+            margin: 60px 0;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .tech-section h2 {
+            color: white;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 800;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .tech-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            border-color: #20B2AA;
+        }
+
+        .tech-item strong {
+            color: #48D1CC;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .tech-item p {
+            color: #d1d5db;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Download Section */
+        .download-section {
+            background: linear-gradient(135deg, #20B2AA 0%, #48D1CC 100%);
+            padding: 80px 40px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            margin: 60px 0;
+            box-shadow: 0 15px 50px rgba(32, 178, 170, 0.3);
+        }
+
+        .download-section h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .download-section p {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .download-section .coming-soon {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 30px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: #d1d5db;
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 0;
+        }
+
+        footer a {
+            color: #48D1CC;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #20B2AA;
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            margin: 30px 0;
+            font-size: 1.1rem;
+        }
+
+        .footer-contact {
+            margin-top: 30px;
+            font-size: 1rem;
+        }
+
+        /* Legal Buttons */
+        .legal-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 35px;
+            background: linear-gradient(135deg, #20B2AA, #1a9999);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(32, 178, 170, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(32, 178, 170, 0.5);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #48D1CC, #40C4C0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-primary,
+            .cta-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Reveal on Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .reveal-rotate {
+            opacity: 0;
+            transform: translateY(40px) rotateX(10deg);
+            transition: all 0.9s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-rotate.active {
+            opacity: 1;
+            transform: translateY(0) rotateX(0deg);
+        }
+
+        /* Staggered Animation Delays for Grid Items */
+        .stagger-1 {
+            transition-delay: 0.1s;
+        }
+
+        .stagger-2 {
+            transition-delay: 0.2s;
+        }
+
+        .stagger-3 {
+            transition-delay: 0.3s;
+        }
+
+        .stagger-4 {
+            transition-delay: 0.4s;
+        }
+
+        .stagger-5 {
+            transition-delay: 0.5s;
+        }
+
+        .stagger-6 {
+            transition-delay: 0.6s;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Glow Effect */
+        @keyframes glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(32, 178, 170, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(32, 178, 170, 0.6);
+            }
+        }
+
+        .glow-effect {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        /* Parallax Effect for Header */
+        .parallax-bg {
+            will-change: transform;
+            transition: transform 0.1s linear;
+        }
+
+        /* Smooth transition for all interactive elements */
+        a,
+        button,
+        .feature-card,
+        .tech-item,
+        .step,
+        .badge {
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Counter animation for step numbers */
+        .step-number.animated {
+            animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Text reveal animation */
+        .text-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .text-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Progress bar animation for scroll indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #20B2AA, #48D1CC);
+            z-index: 9999;
+            width: 0%;
+            transition: width 0.1s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>AniScan</h1>
+        <p>AI-Powered Eye Condition Screening for Underserved Communities</p>
+        <div class="cta-buttons">
+            <a href="#download" class="cta-primary">Download Now</a>
+            <a href="#features" class="cta-secondary">Learn More</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Badges Section -->
+        <div class="badges-section">
+            <h2 style="color: #20B2AA; font-size: 2.2rem; font-weight: 800; margin-bottom: 10px;">Why Choose AniScan?
+            </h2>
+            <p style="color: #4b5563; font-size: 1.1rem; max-width: 800px; margin: 0 auto 20px;">
+                A mobile application that uses artificial intelligence to help screen for
+                common eye conditions including cataracts and glaucoma. Designed specifically for
+                users in underserved areas with limited internet connectivity, AniScan works
+                <strong>100% offline</strong> to bring accessible eye care screening to everyone.
+            </p>
+            <div class="badges-container">
+                <span class="badge">Offline-First</span>
+                <span class="badge badge-primary">Privacy-First</span>
+                <span class="badge badge-secondary">AI-Powered</span>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div id="features" class="section-title">
+            <h2>Powerful Features</h2>
+            <p>Everything you need for accessible, private, and accurate eye screening</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="on-device-ai.png" alt="On-Device AI">
+                </div>
+                <h3>On-Device AI</h3>
+                <p>TensorFlow Lite runs entirely on your device - no internet required for analysis.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="offline-first.png" alt="Offline-First">
+                </div>
+                <h3>Offline-First</h3>
+                <p>Works in areas with no internet. All data stays on your device.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="privacy-first.png" alt="Privacy-First">
+                </div>
+                <h3>Privacy-First</h3>
+                <p>No personal information collected. You control all your data.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="pdf-report.png" alt="PDF Reports">
+                </div>
+                <h3>PDF Reports</h3>
+                <p>Generate professional reports to share with healthcare providers.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="multi-language-support.png" alt="Multi-Language">
+                </div>
+                <h3>Multi-Language Support</h3>
+                <p>Supports 5 languages: English, Spanish, French, German, Chinese.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="accessible.png" alt="Accessible">
+                </div>
+                <h3>Accessible</h3>
+                <p>Text-to-speech, haptic feedback, and screen reader support.</p>
+            </div>
+        </div>
+
+        <!-- How It Works Section -->
+        <div class="how-it-works">
+            <div class="section-title">
+                <h2>How It Works</h2>
+                <p>Simple, fast, and effective eye screening in 5 easy steps</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Open the App</h3>
+                    <p>No account or internet required</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Position Your Face</h3>
+                    <p>Follow the on-screen guide</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Scan Your Eyes</h3>
+                    <p>AI analyzes in seconds</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>View Results</h3>
+                    <p>Get recommendations for next steps</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Share with Doctor</h3>
+                    <p>Export as PDF for professional review</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disclaimer Section -->
+        <div class="disclaimer">
+            <h2>⚠️ Important Medical Disclaimer</h2>
+            <div class="warning-text">
+                AniScan is a SCREENING TOOL ONLY and is NOT a medical diagnosis.
+            </div>
+            <ul>
+                <li>Results are not medical diagnoses</li>
+                <li>Always consult a qualified ophthalmologist for any eye concerns</li>
+                <li>Do not make medical decisions based solely on app results</li>
+                <li>Seek immediate medical attention for concerning symptoms</li>
+            </ul>
+            <p style="color: #991b1b; font-weight: 500; margin-top: 20px;">
+                This app is designed to help identify potential eye conditions that require
+                professional medical evaluation. It cannot replace professional eye care.
+            </p>
+        </div>
+
+        <!-- Technology Section -->
+        <div class="tech-section">
+            <h2>Cutting-Edge Technology</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #d1d5db; max-width: 700px; margin: 0 auto 30px;">
+                AniScan uses the latest AI and mobile technologies to provide accurate screening
+            </p>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <strong>TensorFlow Lite</strong>
+                    <p>On-device neural network inference</p>
+                </div>
+                <div class="tech-item">
+                    <strong>Google ML Kit</strong>
+                    <p>Face and eye detection</p>
+                </div>
+                <div class="tech-item">
+                    <strong>GPU Acceleration</strong>
+                    <p>Fast analysis (100-300ms)</p>
+                </div>
+                <div class="tech-item">
+                    <strong>Cloud API Fallback</strong>
+                    <p>Optional backup when on-device fails</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download Section -->
+        <div id="download" class="download-section">
+            <h2>Get AniScan Today</h2>
+            <p>AniScan is currently available for Android devices.</p>
+            <div class="coming-soon">
+                📱 Coming soon: Google Play Store & Apple App Store
+            </div>
+        </div>
+
+        <!-- Legal Section -->
+        <div
+            style="background: white; padding: 50px 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.08);">
+            <h2 style="color: #20B2AA; font-size: 2.2rem; margin-bottom: 20px; font-weight: 800;">Privacy & Legal</h2>
+            <p style="color: #4b5563; font-size: 1.1rem; max-width: 700px; margin: 0 auto 30px;">
+                We take your privacy seriously. All data is stored locally on your device,
+                and you have complete control over what data is collected and shared.
+            </p>
+            <div class="legal-buttons">
+                <a href="privacy-policy.html" class="btn">Privacy Policy</a>
+                <a href="terms-of-service.html" class="btn btn-secondary">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p style="font-size: 1.1rem; font-weight: 600;">&copy; 2026 Elabs LLC. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-contact">
+            Contact: <a href="mailto:support@aniscan.app">support@aniscan.app</a>
+        </div>
+    </footer>
+</body>
+
+</html>

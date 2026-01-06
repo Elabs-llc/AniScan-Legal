@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AniScan Privacy Policy - How we protect your data">
+    <title>Privacy Policy - AniScan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #20B2AA 0%, #48D1CC 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(32, 178, 170, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .meta {
+            color: rgba(255,255,255,0.95);
+            font-size: 1rem;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: -40px auto 60px;
+            padding: 50px 40px;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 30px;
+            color: #20B2AA;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, rgba(32, 178, 170, 0.1), rgba(72, 209, 204, 0.1));
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: linear-gradient(135deg, #20B2AA, #48D1CC);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        /* Typography */
+        h2 {
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: #20B2AA;
+            border-bottom: 3px solid #48D1CC;
+            padding-bottom: 12px;
+            font-size: 2rem;
+            font-weight: 800;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #20B2AA;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #1a9999;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        p, ul, ol {
+            margin-bottom: 18px;
+            color: #4b5563;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            padding-left: 28px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.8;
+        }
+
+        strong {
+            color: #1a9999;
+            font-weight: 700;
+        }
+
+        a {
+            color: #20B2AA;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        a:hover {
+            color: #1a9999;
+            border-bottom: 2px solid #20B2AA;
+        }
+
+        /* Highlight Box */
+        .highlight {
+            background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+            border-left: 6px solid #f59e0b;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.15);
+        }
+
+        .highlight strong {
+            color: #c2410c;
+            font-size: 1.1rem;
+        }
+
+        .highlight p {
+            margin-bottom: 0;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid #5eead4;
+            box-shadow: 0 8px 20px rgba(32, 178, 170, 0.1);
+        }
+
+        .section-card h3 {
+            margin-top: 0;
+            color: #0f766e;
+        }
+
+        .section-card ul {
+            margin-bottom: 0;
+        }
+
+        /* Checkmarks and X marks */
+        li::marker {
+            color: #20B2AA;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6b7280;
+            font-size: 1rem;
+            background: white;
+            margin-top: 60px;
+            border-top: 3px solid #20B2AA;
+        }
+
+        footer a {
+            color: #20B2AA;
+            font-weight: 600;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #1a9999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                margin: -20px 20px 40px;
+                padding: 30px 20px;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 6px solid #3b82f6;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: #1e40af;
+        }
+
+        .toc ul {
+            margin-bottom: 0;
+        }
+
+        .toc a {
+            color: #2563eb;
+        }
+
+        /* Emoji styling */
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+
+        /* Divider */
+        hr {
+            margin: 50px 0;
+            border: none;
+            border-top: 2px solid #e5e7eb;
+            background: linear-gradient(90deg, transparent, #20B2AA, transparent);
+            height: 2px;
+        }
+
+        /* Summary box */
+        .summary-box {
+            background: linear-gradient(135deg, #20B2AA 0%, #48D1CC 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 15px 40px rgba(32, 178, 170, 0.3);
+        }
+
+        .summary-box h2 {
+            color: white;
+            border-bottom: 3px solid white;
+            margin-top: 0;
+        }
+
+        .summary-box h2::after {
+            background: white;
+        }
+
+        .summary-box p,
+        .summary-box ul,
+        .summary-box li {
+            color: white;
+        }
+
+        .summary-box strong {
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 8px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Privacy Policy</h1>
+        <p class="meta">Effective Date: January 6, 2026 | Last Updated: January 6, 2026</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <h2>Introduction</h2>
+        <p>
+            Welcome to <strong>AniScan</strong>, an AI-powered eye condition screening application
+            developed by <strong>Elabs LLC</strong>. We are committed to protecting your privacy
+            and ensuring transparency about how we handle your data.
+        </p>
+        <p>
+            AniScan is designed as an <strong>offline-first application</strong> specifically to
+            serve users in underserved areas with limited internet connectivity. Your privacy and
+            data security are our top priorities.
+        </p>
+
+        <h2>Information We Collect</h2>
+
+        <h3>1. Data Stored Locally on Your Device (Primary Storage)</h3>
+        <p>All core app data is stored <strong>locally on your device only</strong>:</p>
+        <ul>
+            <li><strong>Eye Scan Images:</strong> Temporarily stored in RAM during analysis, then <strong>automatically deleted</strong>. Never saved to disk unless you explicitly export a scan.</li>
+            <li><strong>Scan Results:</strong> Analysis results stored in an encrypted local database (Hive).</li>
+            <li><strong>User Preferences:</strong> Your app settings including language, offline mode, haptic feedback, and voice guidance.</li>
+            <li><strong>Scan History:</strong> Historical record of your scans stored locally.</li>
+        </ul>
+        <div class="highlight">
+            <strong>Important:</strong> All this data stays on your device. We do not have access to it,
+            and it is not transmitted anywhere unless you explicitly share it.
+        </div>
+
+        <h3>2. Data Collected Online (Optional, Opt-In Only)</h3>
+        <p>When you have internet connectivity and have <strong>NOT</strong> enabled "Offline Mode":</p>
+        <div class="section-card">
+            <h3>Anonymous Usage Analytics (via Firebase, opt-in)</h3>
+            <ul>
+                <li>App screens visited</li>
+                <li>Features used</li>
+                <li>Scan frequency (not scan content)</li>
+                <li>Device type and OS version</li>
+            </ul>
+        </div>
+
+        <div class="section-card">
+            <h3>Crash Reports (via Firebase, opt-in)</h3>
+            <ul>
+                <li>App crash logs</li>
+                <li>Device state at time of crash</li>
+                <li><strong>No personal information or scan data</strong></li>
+            </ul>
+        </div>
+
+        <p><strong>You can disable analytics and crash reporting at any time</strong> in Settings → Analytics.</p>
+
+        <h3>3. Data We DO NOT Collect</h3>
+        <p>We <strong>never</strong> collect:</p>
+        <ul>
+            <li><span class="emoji">❌</span> Personal identification (name, email, phone number)</li>
+            <li><span class="emoji">❌</span> Location data or GPS coordinates</li>
+            <li><span class="emoji">❌</span> Biometric data (beyond temporary scan images)</li>
+            <li><span class="emoji">❌</span> Medical records or health information</li>
+            <li><span class="emoji">❌</span> Contact lists or other app data</li>
+            <li><span class="emoji">❌</span> Browsing history</li>
+            <li><span class="emoji">❌</span> Financial information</li>
+        </ul>
+
+        <h2>How We Use Your Information</h2>
+
+        <h3>Primary Use: Local Analysis</h3>
+        <p>
+            Your eye scan images are processed using TensorFlow Lite running entirely on your device.
+            The AI model analyzes the image and provides results without any data leaving your device.
+        </p>
+
+        <h3>Secondary Use: Cloud Fallback (Optional)</h3>
+        <p>
+            If on-device analysis fails and you're online (with Offline Mode disabled), we may send
+            anonymized eye images to our cloud API. These images are:
+        </p>
+        <ul>
+            <li>Processed immediately</li>
+            <li>Never stored on our servers</li>
+            <li>Deleted after analysis completes</li>
+            <li>Not linked to your identity</li>
+        </ul>
+
+        <h3>Tertiary Use: App Improvement (Optional, Opt-In)</h3>
+        <p>If you enable analytics, we use aggregated, anonymized data to:</p>
+        <ul>
+            <li>Understand which features are most used</li>
+            <li>Identify bugs and crashes</li>
+            <li>Improve app performance</li>
+            <li>Plan new features</li>
+        </ul>
+
+        <h2>Third-Party Services</h2>
+
+        <div class="section-card">
+            <h3>1. TensorFlow Lite (Google)</h3>
+            <ul>
+                <li><strong>Purpose:</strong> On-device AI inference</li>
+                <li><strong>Data Sent:</strong> None (runs entirely on your device)</li>
+                <li><strong>Privacy Policy:</strong> <a href="https://www.tensorflow.org/lite" target="_blank">tensorflow.org/lite</a></li>
+            </ul>
+        </div>
+
+        <div class="section-card">
+            <h3>2. Google ML Kit</h3>
+            <ul>
+                <li><strong>Purpose:</strong> Face detection and eye detection</li>
+                <li><strong>Data Sent:</strong> None (runs entirely on your device)</li>
+                <li><strong>Privacy Policy:</strong> <a href="https://developers.google.com/ml-kit" target="_blank">developers.google.com/ml-kit</a></li>
+            </ul>
+        </div>
+
+        <div class="section-card">
+            <h3>3. Firebase (Google) - Optional, Opt-In</h3>
+            <ul>
+                <li><strong>Purpose:</strong> Analytics and crash reporting</li>
+                <li><strong>Data Sent:</strong> Anonymous usage data, crash reports (no personal info)</li>
+                <li><strong>Control:</strong> Can be disabled in Settings</li>
+                <li><strong>Privacy Policy:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Firebase only activates when:</strong></p>
+            <ul>
+                <li><span class="emoji">✅</span> You have internet connectivity</li>
+                <li><span class="emoji">✅</span> You have NOT enabled "Offline Mode"</li>
+                <li><span class="emoji">✅</span> You have NOT disabled analytics in Settings</li>
+            </ul>
+        </div>
+
+        <h2>Your Rights (GDPR & CCPA Compliance)</h2>
+
+        <h3>Right to Access</h3>
+        <ul>
+            <li>View all your scan history: Settings → History</li>
+            <li>Export your data as JSON: Settings → Export Data</li>
+            <li>Export scans as PDF: History → Select Scan → Share as PDF</li>
+        </ul>
+
+        <h3>Right to Delete</h3>
+        <ul>
+            <li>Delete individual scans: History → Select Scan → Delete</li>
+            <li>Delete all scans: Settings → Delete All Scans</li>
+            <li>Uninstall app to remove all local data</li>
+        </ul>
+
+        <h3>Right to Control</h3>
+        <ul>
+            <li>Enable/Disable Offline Mode: Settings → Offline Mode</li>
+            <li>Enable/Disable Analytics: Settings → Analytics</li>
+            <li>Enable/Disable Voice Guidance: Settings → Voice Guidance</li>
+            <li>Enable/Disable Haptic Feedback: Settings → Haptic Feedback</li>
+        </ul>
+
+        <h3>Right to Data Portability</h3>
+        <ul>
+            <li>Export all data: Settings → Export Data (JSON format)</li>
+            <li>Share individual scans: History → Select Scan → Share as PDF</li>
+        </ul>
+
+        <h2>Children's Privacy</h2>
+        <p>
+            AniScan is <strong>not intended for children under 13 years of age</strong>. We do not
+            knowingly collect personal information from children under 13.
+        </p>
+        <p>
+            <strong>Parental consent is required</strong> for users between 13-18 years of age.
+        </p>
+
+        <h2>Offline Mode</h2>
+        <div class="highlight">
+            <strong>Offline Mode is our recommended setting</strong> for maximum privacy.
+        </div>
+        <p><strong>When Offline Mode is enabled:</strong></p>
+        <ul>
+            <li><span class="emoji">✅</span> All AI analysis happens on your device</li>
+            <li><span class="emoji">✅</span> No data sent to any servers</li>
+            <li><span class="emoji">✅</span> Firebase analytics disabled</li>
+            <li><span class="emoji">✅</span> No internet connection required</li>
+            <li><span class="emoji">✅</span> 100% private and secure</li>
+        </ul>
+        <p><strong>To enable:</strong> Settings → Offline Mode → ON</p>
+
+        <h2>Changes to This Privacy Policy</h2>
+        <p>
+            We may update this Privacy Policy from time to time. When we make changes:
+        </p>
+        <ul>
+            <li><strong>In-App Notification:</strong> Material changes will be notified in the app</li>
+            <li><strong>Effective Date:</strong> Updated at the top of this policy</li>
+            <li><strong>Continued Use:</strong> Using the app after changes means you accept the new policy</li>
+        </ul>
+
+        <h2>Contact Us</h2>
+        <p>If you have questions or concerns regarding this Privacy Policy:</p>
+        <p>
+            <strong>Email:</strong> <a href="mailto:support@aniscan.app">support@aniscan.app</a><br>
+            <strong>Website:</strong> <a href="https://aniscan.app">aniscan.app</a><br>
+            <strong>Company:</strong> Elabs LLC
+        </p>
+        <p>We will respond to your inquiries within 30 days.</p>
+
+        <div class="summary-box">
+            <h2>Summary</h2>
+            <p><strong>What makes AniScan privacy-friendly:</strong></p>
+            <ul>
+                <li><span class="emoji">✅</span> Offline-first design (internet optional)</li>
+                <li><span class="emoji">✅</span> All data stored locally on your device</li>
+                <li><span class="emoji">✅</span> No accounts required</li>
+                <li><span class="emoji">✅</span> No personal information collected</li>
+                <li><span class="emoji">✅</span> You control all data (view, export, delete)</li>
+                <li><span class="emoji">✅</span> Optional analytics (can be disabled)</li>
+                <li><span class="emoji">✅</span> Transparent about all data practices</li>
+                <li><span class="emoji">✅</span> GDPR & CCPA compliant</li>
+            </ul>
+            <p style="font-size: 1.3rem; margin-top: 20px; margin-bottom: 0;"><strong>Your data, your control.</strong></p>
+        </div>
+
+        <hr>
+        <p style="text-align: center; color: #6b7280; font-size: 1rem;">
+            <strong>Last Updated:</strong> January 6, 2026 | <strong>Version:</strong> 1.0.0
+        </p>
+    </div>
+
+    <footer>
+        <p style="font-weight: 600; font-size: 1.1rem;">&copy; 2026 Elabs LLC. All rights reserved.</p>
+        <p style="margin-top: 15px;">
+            <a href="index.html">Home</a> |
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms-of-service.html">Terms of Service</a>
+        </p>
+    </footer>
+</body>
+</html>

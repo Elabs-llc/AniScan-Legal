@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AniScan Terms of Service - Legal terms and medical disclaimer">
+    <title>Terms of Service - AniScan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #20B2AA 0%, #48D1CC 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(32, 178, 170, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .meta {
+            color: rgba(255,255,255,0.95);
+            font-size: 1rem;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: -40px auto 60px;
+            padding: 50px 40px;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 30px;
+            color: #20B2AA;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, rgba(32, 178, 170, 0.1), rgba(72, 209, 204, 0.1));
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: linear-gradient(135deg, #20B2AA, #48D1CC);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        /* Typography */
+        h2 {
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: #20B2AA;
+            border-bottom: 3px solid #48D1CC;
+            padding-bottom: 12px;
+            font-size: 2rem;
+            font-weight: 800;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #20B2AA;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #1a9999;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        p, ul, ol {
+            margin-bottom: 18px;
+            color: #4b5563;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            padding-left: 28px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.8;
+        }
+
+        strong {
+            color: #1a9999;
+            font-weight: 700;
+        }
+
+        a {
+            color: #20B2AA;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        a:hover {
+            color: #1a9999;
+            border-bottom: 2px solid #20B2AA;
+        }
+
+        /* Warning Box */
+        .warning {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-left: 6px solid #dc2626;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.2);
+        }
+
+        .warning h3 {
+            color: #dc2626;
+            margin-top: 0;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .warning p,
+        .warning ul,
+        .warning li {
+            color: #991b1b;
+        }
+
+        .warning strong {
+            color: #7f1d1d;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 2px 8px;
+            border-radius: 5px;
+        }
+
+        /* Highlight Box */
+        .highlight {
+            background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+            border-left: 6px solid #f59e0b;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.15);
+        }
+
+        .highlight strong {
+            color: #c2410c;
+        }
+
+        .highlight p {
+            margin-bottom: 10px;
+        }
+
+        .highlight ul {
+            margin-bottom: 0;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid #5eead4;
+            box-shadow: 0 8px 20px rgba(32, 178, 170, 0.1);
+        }
+
+        .section-card h3 {
+            margin-top: 0;
+            color: #0f766e;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6b7280;
+            font-size: 1rem;
+            background: white;
+            margin-top: 60px;
+            border-top: 3px solid #20B2AA;
+        }
+
+        footer a {
+            color: #20B2AA;
+            font-weight: 600;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #1a9999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                margin: -20px 20px 40px;
+                padding: 30px 20px;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Emoji styling */
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+
+        /* Divider */
+        hr {
+            margin: 50px 0;
+            border: none;
+            border-top: 2px solid #e5e7eb;
+            background: linear-gradient(90deg, transparent, #20B2AA, transparent);
+            height: 2px;
+        }
+
+        /* Summary box */
+        .summary-box {
+            background: linear-gradient(135deg, #20B2AA 0%, #48D1CC 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 15px 40px rgba(32, 178, 170, 0.3);
+        }
+
+        .summary-box h2 {
+            color: white;
+            border-bottom: 3px solid white;
+            margin-top: 0;
+        }
+
+        .summary-box h2::after {
+            background: white;
+        }
+
+        .summary-box p,
+        .summary-box ul,
+        .summary-box li {
+            color: white;
+        }
+
+        .summary-box strong {
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 8px;
+            border-radius: 5px;
+        }
+
+        /* Important callout */
+        .critical-box {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.4);
+            border: 3px solid #991b1b;
+        }
+
+        .critical-box h2,
+        .critical-box h3 {
+            color: white;
+            border: none;
+            margin-top: 0;
+        }
+
+        .critical-box h2::after {
+            display: none;
+        }
+
+        .critical-box p,
+        .critical-box ul,
+        .critical-box li {
+            color: white;
+        }
+
+        .critical-box strong {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 3px 10px;
+            border-radius: 5px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Terms of Service</h1>
+        <p class="meta">Effective Date: January 6, 2026 | Last Updated: January 6, 2026</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+            By downloading, installing, or using the AniScan mobile application ("App"), you agree
+            to be bound by these Terms of Service ("Terms").
+        </p>
+        <p><strong>If you do not agree to these Terms, do not use the App.</strong></p>
+
+        <h2>2. Description of Service</h2>
+        <h3>What AniScan Is</h3>
+        <p>AniScan is an <strong>AI-powered eye condition screening tool</strong> designed to help users:</p>
+        <ul>
+            <li>Screen for potential eye conditions (Cataract, Glaucoma)</li>
+            <li>Detect normal eye health</li>
+            <li>Receive recommendations for professional medical care</li>
+        </ul>
+
+        <h3>What AniScan Is NOT</h3>
+        <p>AniScan is <strong>NOT</strong>:</p>
+        <ul>
+            <li><span class="emoji">❌</span> A medical diagnosis tool</li>
+            <li><span class="emoji">❌</span> A substitute for professional eye care</li>
+            <li><span class="emoji">❌</span> A medical device (not FDA approved)</li>
+            <li><span class="emoji">❌</span> A replacement for ophthalmologist visits</li>
+            <li><span class="emoji">❌</span> A treatment recommendation service</li>
+        </ul>
+
+        <div class="critical-box">
+            <h2><span class="emoji">⚠️</span> CRITICAL MEDICAL DISCLAIMER</h2>
+            <h3>THIS IS NOT MEDICAL ADVICE</h3>
+            <p><strong>READ THIS SECTION CAREFULLY - IT IS THE MOST IMPORTANT PART OF THESE TERMS</strong></p>
+        </div>
+
+        <h2>3. Medical Disclaimer Details</h2>
+
+        <h3>Not a Medical Diagnosis</h3>
+        <ul>
+            <li>AniScan is a <strong>SCREENING TOOL ONLY</strong></li>
+            <li>Results are <strong>NOT medical diagnoses</strong></li>
+            <li>Results are <strong>NOT definitive or conclusive</strong></li>
+            <li>False positives and false negatives <strong>ARE POSSIBLE</strong></li>
+            <li>AI can make mistakes</li>
+        </ul>
+
+        <h3>Professional Medical Care is Required</h3>
+        <div class="section-card">
+            <h3><span class="emoji">✅</span> YOU MUST:</h3>
+            <ul>
+                <li>Consult a qualified ophthalmologist for any eye concerns</li>
+                <li>Get professional eye examinations regularly</li>
+                <li>Seek immediate medical attention for concerning symptoms</li>
+                <li>Have all AniScan results verified by a licensed eye care professional</li>
+                <li>Follow your doctor's advice, not app results</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <h3><span class="emoji">❌</span> DO NOT:</h3>
+            <ul>
+                <li>Make medical decisions based solely on AniScan results</li>
+                <li>Delay seeking professional medical care because of app results</li>
+                <li>Stop taking medications based on app results</li>
+                <li>Self-diagnose using this app</li>
+                <li>Assume normal results mean you don't need eye exams</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <h3><span class="emoji">🚨</span> When to Seek Immediate Medical Attention</h3>
+            <p><strong>Seek IMMEDIATE professional medical care if you experience:</strong></p>
+            <ul>
+                <li>Sudden vision loss or vision changes</li>
+                <li>Eye pain or severe discomfort</li>
+                <li>Flashes of light or floaters</li>
+                <li>Red, swollen, or irritated eyes</li>
+                <li>Any other concerning eye symptoms</li>
+            </ul>
+            <p><strong>Do not wait to use the app - GO TO A DOCTOR IMMEDIATELY.</strong></p>
+        </div>
+
+        <h3>AI Limitations</h3>
+        <p>Artificial Intelligence has inherent limitations:</p>
+        <ul>
+            <li>Not 100% accurate</li>
+            <li>Can produce false results</li>
+            <li>Trained on limited datasets</li>
+            <li>Cannot detect all eye conditions</li>
+            <li>Cannot replace human medical expertise</li>
+            <li>May not work well on all skin tones or eye conditions</li>
+        </ul>
+
+        <h2>4. User Responsibilities</h2>
+        <h3>Appropriate Use</h3>
+        <p>You agree to:</p>
+        <ul>
+            <li>Use the app for personal, non-commercial screening only</li>
+            <li>Follow all instructions for optimal results</li>
+            <li>Keep the app updated to the latest version</li>
+            <li>Verify all results with a healthcare professional</li>
+        </ul>
+
+        <h3>Prohibited Uses</h3>
+        <p>You agree NOT to:</p>
+        <ul>
+            <li>Use the app for medical diagnosis</li>
+            <li>Rely solely on app results for medical decisions</li>
+            <li>Use the app to screen others commercially (without license)</li>
+            <li>Reverse engineer or decompile the app</li>
+            <li>Redistribute or resell the app</li>
+        </ul>
+
+        <h2>5. Liability Limitations</h2>
+        <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW</strong>, Elabs LLC and its officers, directors, employees, and affiliates SHALL NOT BE LIABLE FOR:</p>
+        <ul>
+            <li><strong>Missed Diagnoses:</strong> Conditions not detected by the app</li>
+            <li><strong>False Positives:</strong> Incorrect indication of eye conditions</li>
+            <li><strong>False Negatives:</strong> Failure to detect actual conditions</li>
+            <li><strong>Medical Decisions:</strong> Any medical decisions you make based on app results</li>
+            <li><strong>Damages:</strong> Direct, indirect, incidental, consequential, or punitive damages</li>
+            <li><strong>Medical Outcomes:</strong> Any negative health outcomes or complications</li>
+        </ul>
+
+        <div class="warning">
+            <h3>Use at Your Own Risk</h3>
+            <p><strong>THE APP IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.</strong></p>
+            <p>
+                You use the app <strong>AT YOUR OWN RISK</strong> with full understanding that results
+                may be inaccurate and professional medical care is always required.
+            </p>
+        </div>
+
+        <h2>6. No Warranties</h2>
+        <p>The app is provided <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> without warranties of any kind, including but not limited to:</p>
+        <ul>
+            <li>Warranties of merchantability</li>
+            <li>Warranties of fitness for a particular purpose</li>
+            <li>Warranties of accuracy</li>
+            <li>Warranties of reliability</li>
+            <li>Warranties that the app will be error-free</li>
+        </ul>
+
+        <h2>7. Intellectual Property</h2>
+        <p>
+            All intellectual property rights in the App, including source code, AI models, and design,
+            are owned by <strong>Elabs LLC</strong>.
+        </p>
+        <p><strong>Your Scan Data:</strong> You retain ownership of your eye scan images and results.</p>
+
+        <h2>8. Privacy & Data</h2>
+        <p>
+            Please review our <a href="privacy-policy.html">Privacy Policy</a> to understand how we
+            collect, use, and protect your data.
+        </p>
+        <div class="section-card">
+            <h3>Key Privacy Points:</h3>
+            <ul>
+                <li><strong>Offline-First:</strong> All data stored locally on your device</li>
+                <li><strong>No Accounts:</strong> No registration required</li>
+                <li><strong>Optional Analytics:</strong> Can be disabled in Settings</li>
+                <li><strong>User Control:</strong> You control all data (view, export, delete)</li>
+            </ul>
+        </div>
+
+        <h2>9. Offline Operation</h2>
+        <p>AniScan is designed to work <strong>100% offline</strong>:</p>
+        <ul>
+            <li>On-device AI analysis (TensorFlow Lite)</li>
+            <li>Local data storage (Hive database)</li>
+            <li>No internet required for core functionality</li>
+        </ul>
+        <p>
+            You can <strong>disable all internet use</strong> by enabling "Offline Mode" in Settings.
+        </p>
+
+        <h2>10. Prohibited Commercial Use</h2>
+        <p>The free version of AniScan is licensed for <strong>personal, non-commercial use only</strong>.</p>
+        <p>You may <strong>NOT</strong> use the app to:</p>
+        <ul>
+            <li>Screen patients in a medical practice</li>
+            <li>Charge fees for eye screenings using the app</li>
+            <li>Provide commercial screening services</li>
+        </ul>
+        <p>For commercial licensing, contact: <a href="mailto:support@aniscan.app">support@aniscan.app</a></p>
+
+        <h2>11. Updates & Modifications</h2>
+        <p>We may:</p>
+        <ul>
+            <li>Release updates to improve the app</li>
+            <li>Fix bugs and security issues</li>
+            <li>Modify existing features</li>
+            <li>Update AI models for better accuracy</li>
+        </ul>
+        <p>You should <strong>keep the app updated</strong> for best performance and security.</p>
+
+        <h2>12. Governing Law</h2>
+        <p>
+            These Terms shall be governed by the laws of the United States and the State of Delaware,
+            without regard to conflict of law principles.
+        </p>
+
+        <h2>13. Contact Information</h2>
+        <p>If you have questions about these Terms:</p>
+        <p>
+            <strong>Email:</strong> <a href="mailto:support@aniscan.app">support@aniscan.app</a><br>
+            <strong>Website:</strong> <a href="https://aniscan.app">aniscan.app</a><br>
+            <strong>Company:</strong> Elabs LLC
+        </p>
+
+        <div class="highlight">
+            <h2>14. Acknowledgment</h2>
+            <p><strong>BY USING ANISCAN, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS OF SERVICE.</strong></p>
+            <p><strong>YOU SPECIFICALLY ACKNOWLEDGE:</strong></p>
+            <ul>
+                <li><span class="emoji">✅</span> This is a screening tool, NOT a medical diagnosis</li>
+                <li><span class="emoji">✅</span> Professional medical care is required</li>
+                <li><span class="emoji">✅</span> AI can produce false results</li>
+                <li><span class="emoji">✅</span> You use the app at your own risk</li>
+                <li><span class="emoji">✅</span> We are not liable for medical outcomes</li>
+                <li><span class="emoji">✅</span> You will not rely solely on app results</li>
+            </ul>
+        </div>
+
+        <div class="summary-box">
+            <h2>Summary</h2>
+            <p><strong>Key Points:</strong></p>
+            <ul>
+                <li>AniScan is a screening tool, NOT medical advice</li>
+                <li>Always consult a qualified ophthalmologist</li>
+                <li>Results may be inaccurate (false positives/negatives)</li>
+                <li>Use at your own risk</li>
+                <li>No warranties provided</li>
+                <li>Limited liability</li>
+                <li>Offline-first design for privacy</li>
+                <li>Personal use only (commercial use prohibited)</li>
+            </ul>
+            <p style="font-size: 1.3rem; margin-top: 20px; margin-bottom: 0;"><strong>When in doubt, see a doctor.</strong></p>
+        </div>
+
+        <hr>
+        <p style="text-align: center; color: #6b7280; font-size: 1rem;">
+            <strong>Last Updated:</strong> January 6, 2026 | <strong>Version:</strong> 1.0.0
+        </p>
+    </div>
+
+    <footer>
+        <p style="font-weight: 600; font-size: 1.1rem;">&copy; 2026 Elabs LLC. All rights reserved.</p>
+        <p style="margin-top: 15px;">
+            <a href="index.html">Home</a> |
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms-of-service.html">Terms of Service</a>
+        </p>
+    </footer>
+</body>
+</html>
